@@ -1,0 +1,495 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*seudoclase root, viene siendo el esquema de la web */
+:root{
+/*comportamiento del scroll */
+    scroll-behavior: smooth;
+}
+body {
+
+    font-family: 'Open Sans', sans-serif;
+}
+
+.contenedor{
+    /*width grosor */
+    width: 90%;
+    max-width: 1200px;
+    /*overflow es lo que se sale, y poniendole hidden, se oculta lo que sale de el*/
+    overflow: hidden;
+    /* Esto es para que lo centre todo*/
+    margin: auto;
+    /*Espaciado entre los elementos */
+    padding: 60px 0px;
+}
+
+header{
+/*Se vea compleatamente el header, 100% de la pantalla */
+    height: 100vh;
+    /*Este url estamos buscando la imagen del header con los gradientes*/
+    background-image: linear-gradient(135deg, #667eea79 0%, #764ba275 100%), url(../img/street.jpg);
+    /*Como vemos hay que ponerle cuidado al background*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    
+    
+    
+}
+
+/*Los textos estan en head asi que es la hora de cambiarlos */ 
+.head {
+/*Porque padding pues, por que esta unido a contenedor y solo queremos head (Recuerda que son clases)*/
+    text-align: center;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    
+    
+
+}
+
+.hamburger{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background: #fff;
+    width: 30px;
+    height: 30px;
+    /*Para que aparezca la manita*/
+    cursor: pointer;
+    border-radius: 40px;
+    /*Box shadow es para la apariencia de sombrado, mira el detalle*/
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+}
+
+.menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 25vw;
+    height: 100%;
+    background-image: linear-gradient(135deg, #667eead8 0%, #764ba2e5 100%);
+    /*Recuerda que display es como se muestra */
+    display: flex;
+    /*Flex direction es como se odenara el flex*/
+    flex-direction: column;
+    /*Justificar contenido, space evenly, repartir espacio equitativo */
+    justify-content: space-evenly;
+    /*Alinear al centro*/
+    align-items: center;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .5) ;
+    /*Para meter el contenido y que no salga en la pagina principal, el menu */
+    transform: translate(110%);
+    transition: transform .2s ease-in-out;
+    
+}
+
+.spread { 
+    transform: translate(0);
+    transition: transform .3s .2s;
+}
+
+.menu a{
+    color: #fff;
+    text-decoration:#00f2fe;
+}
+
+.titulo{
+    font-size: 60px;
+    margin-bottom: 15px;
+
+}
+
+.copy{
+    font-weight: 300px;
+    font-size: 25px;
+}
+
+/*Nuestro Servicio*/
+
+.subtitulo{
+    text-align: center;
+    
+    font-weight: 300;
+    color: #9f8ad0;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+.contenedor-servicio{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /*Esto es si no cabe en la linea lo pasa para abajo*/
+    flex-wrap: wrap;
+}
+
+.contenedor-servicio img{
+    width: 30%;
+}
+
+.chechlist-servicio{
+    width: 40%;   
+}
+
+.service{
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+}
+
+.n-service{
+    justify-content: space-evenly;
+    margin-bottom: 8px;
+    color:#9f8ad0;
+    
+}
+
+.number{
+    /*se le pone para que pueda darle height y width*/
+    display: inline-block;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    width: 30px;
+    height: 30px;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 800;
+    line-height: 30px;
+    margin-right: 5px;
+
+}
+
+.gallery{
+
+    background: #f2f2f2;
+}
+
+.contedor-galeria{
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+   
+
+}
+
+.img-galeria{
+    object-fit: cover;
+    width: 30%;
+    /*como quieres que se muestren*/
+    display: block;
+    margin-bottom: 15px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .5);
+    cursor: pointer;
+
+}
+
+/*Esto es para cuando se vea la imagen seleccionada*/
+.imagenlight{
+    position:fixed;
+    background: rgba(0, 0, 0, 0.89);
+    width: 100%;
+    height: 100%;
+    top:0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(100%);
+    /*las funciones para que las imagenes se animen con el tiempo*/
+    transition: transform .2s ease-in-out;
+
+}
+
+/*Esto sera para volverlo y no quede la pagina con el pase de imagen */
+.show{
+    transform: translate(0);
+}
+
+.agregarimagen{
+    object-fit: cover;
+    width: 60%;
+    border-radius: 10px;
+    /**/
+    transform: scale(0);
+    transition: transform .3s .2s;
+}
+
+/*Mostrara la imagen */
+.showImage{
+
+    transform: scale(1);
+}
+
+/*Icono close, para cerrar */
+.close{
+    /*Seguira la posicion de su padre*/
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        cursor: pointer;
+
+}
+
+.experts{
+
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cont-experts{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.cont-experts img{
+
+    width: 25%;
+    display: flex;
+    margin: 0 auto;
+}
+
+
+.n-expert{
+    display: inline-block;
+    margin-top: 20px;
+    display: block;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/*footer*/
+footer{
+    background: #9f8ad0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border: solid 0.1 black;
+}
+
+.footer-content{
+    /*display flex y block, uno es por bloque el otro lo flexiona*/
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    width: 90%;
+}
+
+.contactus{
+   width: 40%;
+   color: #fff;
+   padding-top: 40px;
+   margin-bottom: 40px;
+   
+}
+
+.brand{
+    /*font weight, quita el grosor de la letra*/
+    font-weight: 100;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.contactus p{
+
+    font-weight: 100;
+}
+
+.social-media{
+    width: 25%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.social-media-icon{
+    display: inline-block;
+    margin-left: 20px;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+
+}
+
+.social-media-icon :hover{
+    
+    background: #fff;
+    color: #00f2fe;
+    border-radius: 100%;
+    
+    
+}
+
+.social-media-icon i{
+
+    line-height: 60px;
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    /*centra los iconos en el medio del circulo*/
+    
+   
+
+}
+
+/*trabajar con los ID */
+.social-media-icon#ig :hover {
+    color: #f093fb 
+
+}
+.social-media-icon#tw :hover {
+    color:#667eea;
+
+}
+
+
+.line{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 60px;
+}
+
+/*Breakpoint, adaptar para celulares */
+@media  screen and (max-width: 800px) {
+    
+ 
+    .menu{
+        width: 50vw;
+    }
+
+    .titulo{
+        font-size: 40px;
+    }
+
+    .contenedor-servicio img{
+        width: 300px;
+        margin-bottom: 40px;
+    }
+
+    .chechlist-servicio{
+        width: 80%;
+        justify-content: center ;
+        padding-left: 40px;
+    }
+
+    .service{
+        margin-bottom: 40px;
+    }
+
+    .agregarimagen{
+        width: 80%;
+        
+    }
+    
+    .img-galeria{
+        width: 40%;
+    }
+
+    
+    .social-media{
+        
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+
+
+    .contactus{
+        
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+      
+        
+    }
+    
+}
+
+@media  screen and (max-width: 500px) {
+
+    .menu{
+        width: 65vw;
+
+
+    }
+
+    .contenedor-servicio img{
+        width: 200px;
+    }
+
+    .copy{
+        font-size: 18px;
+    }
+
+    .hamburger{
+        top: 20px;
+        right: 20px;
+    }
+
+    .agregarimagen{
+
+        width: 85%;
+
+    }
+    
+    .titulo{
+        font-size: 30px;
+    }
+
+    .subtitulo{
+        font-size: 30x;
+    }
+
+    .img-galeria{
+        width: 45%;
+    }
+
+    .footer-content{
+        display: block;
+        justify-content: center;
+        
+        margin-right: 30px;
+    }
+    .contactus{
+        margin-left: 25%;
+    }
+
+ 
+
+    .social-media{
+        
+        width: 80px;
+        justify-content: center;
+        align-items: center;
+        margin-left: 40%;
+      
+    }
+    .social-media-icon{
+        margin: 20px;
+    }
+
+
+
+}

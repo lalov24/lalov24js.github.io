@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <!--Aqui creamos la clase header para la nav bar-->
+    <header class="header" id="inicio">
+        <!--Colocamos la imagen que viene siendo el hamburger-->
+        <img src="img/hamburguesa.svg" alt="" class="hamburger">
+        <!--dentro la nav bar-->
+        <nav class="menu">
+            <!--Aqui se hace desplazamiento por ancla por eso las #-->
+            <a href="#inicio">Inicio</a>
+            <a href="#servicio">Servicio</a>
+            <a href="#portafolio">Portafolio</a>
+            <a href="#expertos">Expertos</a>
+            <a href="#contacto">Contactos</a>
+        </nav>
+        <!--Aqui va el contenedor del head, una imagen gigante-->
+        <div class="contenedor head">
+            <h1 class="titulo">Los Shonen Jump son una Maravilla</h1>
+            <p class="copy">Shūkan Shōnen Jump o Weekly Shōnen Jump es una revista antológica semanal de manga orientado a una demografía shōnen, publicada por la editorial Shūeisha como parte de la línea de revistas Jump.​</p>
+        </div>
+    </header>
+    <!--Contenido de la pagina web, contenido principal-->
+    <main>
+        <section class="contenedor" id="servicio">
+            <h2 class="subtitulo">Nuestro Servicio</h2>
+            <div class="contenedor-servicio">
+                <img src="img/naruto.svg" alt="">
+                <!--Se crea el div padre de servicio-->
+                <div class="chechlist-servicio">
+                    <!--div hijos-->
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">1</span>Mangaka</h3>
+                        <p>Mangaka (漫画家?) Es la palabra japonesa designada para referirse al Historietista. Fuera de Japón, principalmente en Occidente, la palabra se usa para referirse a autores de Historietas japonesas o Manga.</p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">2</span>Manga</h3>
+                        <p>Manga (kanji: 漫画; hiragana: まんが; katakana: マンガ?) es la palabra japonesa para designar las historietas en general. Fuera de Japón, se utiliza para referirse a las historietas de origen japonés.</p>
+                    </div>
+                    <div class="service">
+                        <h3 class="n-service"><span class="number">3</span>Anime</h3>
+                        <p>El anime, (en japonés, アニメ [Acerca de este sonido aɲime (?·i)]) también escrito ánime y animé en español,​ es un estilo de animación tradicional o por computadora de origen japonés. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--continuamos en la segunda section-->
+        <section class="gallery" id="portafolio" >
+            <div class="contenedor">
+                <h2 class="subtitulo">Galeria</h2>
+                <div class="contedor-galeria">
+                    <!--img * 6 para que salgan seis imagenes-->
+                    <img src="img/1.jpg" alt="" class="img-galeria">
+                    <img src="img/4.jpg" alt="" class="img-galeria">
+                    <img src="img/1.jpg" alt="" class="img-galeria">
+                    <img src="img/4.jpg" alt="" class="img-galeria">
+                    <img src="img/1.jpg" alt="" class="img-galeria">
+                    <img src="img/4.jpg" alt="" class="img-galeria">
+                    
+                </div>
+            </div>
+    </section>
+         <!-- Sera el efecto lightbox -->
+            <section class="imagenlight">
+            <img src="img/close.svg" alt="" class="close">
+            <img src="img/4.jpg" alt="" class="agregarimagen">
+        </section> 
+    <section class="contenedor" id="expertos">
+        <h2 class="subtitulo">Expertos en:</h2>
+        <section class="experts">
+            <div class="cont-experts" id="dbz">
+                <img src="img/dbz.png" alt="" >
+                <h3 class="n-expert">DBZ</h3>
+            </div>
+            <div class="cont-experts" id="op">
+                <img src="img/op2.png" alt="" >
+                <h3 class="n-expert">One Piece</h3>
+            </div>
+            <div class="cont-experts" id="bl">
+                <img src="img/bl.png" alt="" >
+                <h3 class="n-expert">Bleach</h3>
+            </div>
+        </section>
+    </section>
+    </main>
+    <!-- Pie de página -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="contactus">
+                <h2 class="brand">Skip-Anime</h2>
+                <p>Somos Expertos en Anime</p>
+            </div>
+            <div class="social-media">
+              <a href="./" class="social-media-icon"> 
+                <i class='bx bxl-facebook-circle' ></i>
+            </a>
+              <a href="./" class="social-media-icon" id="tw"> 
+                <i class='bx bxl-twitter' ></i>
+            </a>
+              <a href="./" class="social-media-icon" id="ig"> 
+                <i class='bx bxl-instagram'></i>
+            </a>
+            </div>
+        </div>
+        <div class="line"></div>
+    </footer>
+
+    
+    <script src="js/menu.js"></script>
+    <script src="js/lightbox.js"></script>
+    
+</body>
+</html>
